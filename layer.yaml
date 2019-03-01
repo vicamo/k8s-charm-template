@@ -1,0 +1,4 @@
+repo: https://github.com/juju-solutions/k8s-charm-template.git
+includes:
+  - "layer:caas-base"
+  - "layer:docker-resource"  # this should be folded into reactive

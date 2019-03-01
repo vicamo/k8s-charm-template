@@ -1,0 +1,24 @@
+name: k8s-charm-template
+summary: Example starting point for K8s charms
+maintainers:
+  - Juju Developers <juju@lists.ubuntu.com>
+description: |
+  This is an example starting point for a Kubernetes charm.
+tags:
+  - example
+series:
+   - kubernetes
+resources:
+  my-image:
+    type: oci-image
+    description: "Image used in the pod."
+    # instructs layer:docker-resource to automatically fetch this resource
+    auto-fetch: true
+    # this field is informational only, and it should not be
+    # pinned to a specific image sha or tag
+    upstream-source: ubuntu
+  my-other-image:
+    type: oci-image
+    description: "Another image used in the pod."
+    auto-fetch: true
+    upstream-source: ubuntu
