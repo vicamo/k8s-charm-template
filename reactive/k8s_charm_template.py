@@ -9,7 +9,7 @@ from charms import layer
           'layer.docker-resource.my-other-image.available')
 @when_not('charm.k8s-charm-template.started')
 def start_charm():
-    layer.status.maintenance('configuring workload')
+    layer.status.maintenance('starting workload')
 
     # fetch the info (registry path, auth info) about the images
     image1_info = layer.docker_resource.get_info('my-image')
@@ -58,9 +58,7 @@ def start_charm():
         ],
     })
 
-    # juju should set the status to active once the workload
-    # pod is up and running (I think?)
-    layer.status.maintenance('starting workload')
+    layer.status.active('ready')
     set_flag('charm.k8s-charm-template.started')
 
 
