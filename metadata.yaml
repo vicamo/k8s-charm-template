@@ -12,13 +12,16 @@ resources:
   my-image:
     type: oci-image
     description: "Image used in the pod."
-    # instructs layer:docker-resource to automatically fetch this resource
+    # Instructs layer:docker-resource to automatically fetch this resource.
+    # This will soon be folded into charms.reactive and not be docker specific.
     auto-fetch: true
-    # this field is informational only, and it should not be
-    # pinned to a specific image sha or tag
-    upstream-source: ubuntu
+    # This field is an informational only pointer to where an OCI image
+    # which can be used to satisfy this resource can be found. It is
+    # not used in any way by Juju or the Charm Store. It should not be
+    # pinned to a specific image SHA or tag.
+    upstream-source: busybox
   my-other-image:
     type: oci-image
     description: "Another image used in the pod."
     auto-fetch: true
-    upstream-source: ubuntu
+    upstream-source: gcr.io/google-containers/cassandra
