@@ -27,6 +27,7 @@ def start_charm():
                     'password': image1_info.password,
                 },
                 'command': [],
+                'args': [ "--arg1", "--arg2"],
                 'ports': [
                     {
                         'name': 'website1',
